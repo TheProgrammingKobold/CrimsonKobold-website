@@ -1,0 +1,32 @@
+.landscape {
+  position:fixed;
+  top:0px;
+  left:0px;
+  background:url("../images/space.webp");
+  width:100vw;
+  height:100vh;
+  background-size:1200px 650px;
+  background-position:0px;
+  z-index:-1;
+}
+
+.center {
+  width: 500px;
+  margin: auto;
+}
+
+.navigationbuttons {
+  margin:auto;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 64px;
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Brush Script MT', cursive;
+  color: aliceblue;
+}
