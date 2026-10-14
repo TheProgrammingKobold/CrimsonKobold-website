@@ -10,19 +10,22 @@
   </head>
   <body>
     <div class="landscape" id="landscape">
-      <div class="center">
+      <div id="container">
         <h1>
           Crimson's Cool Website! 
         </h1>
-      </div>
-      <div class="navigationbuttons">
-        <button>Blog</button>
-        <button>Music</button>
-        <button>Coding</button>
-        <button>BidoofTV</button>
-        <button>Minecraft Server</button>
-        <button>Other Art Stuff</button>
-        <button>Photos</button>
+      
+        <div class="center_buttons">
+          <a href="{{ url_for('blog')}}"><button class="navigationbuttons">Blog</button></a>
+          <button class="navigationbuttons">Music</button>
+          <button class="navigationbuttons">Coding</button>
+          <button class="navigationbuttons">BidoofTV</button>
+          <button class="navigationbuttons">Minecraft Server</button>
+          <button class="navigationbuttons">Photos</button>
+          <button class="navigationbuttons">Other Art Stuff</button>
+        </div>
+
+        {% block Body %}{% endblock %}
       </div>
     </div>
   </body>

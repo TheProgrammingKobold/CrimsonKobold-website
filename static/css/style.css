@@ -5,28 +5,35 @@
   background:url("../images/space.webp");
   width:100vw;
   height:100vh;
-  background-size:1200px 650px;
+  background-size:700px 300px;
   background-position:0px;
   z-index:-1;
 }
 
-.center {
-  width: 500px;
-  margin: auto;
+.center_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navigationbuttons {
   margin:auto;
   border: none;
-  color: white;
-  padding: 15px 32px;
+  color: black;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  font-size: 64px;
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
   cursor: pointer;
 }
 
 body {
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Courier New', monospace;
   color: aliceblue;
+}
+
+#container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
