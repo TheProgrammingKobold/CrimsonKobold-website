@@ -14,19 +14,25 @@
         <h1>
           Crimson's Cool Website! 
         </h1>
-      
-        <div class="center_buttons">
-          <a href="{{ url_for('blog')}}"><button class="navigationbuttons">Blog</button></a>
-          <button class="navigationbuttons">Music</button>
-          <button class="navigationbuttons">Coding</button>
-          <button class="navigationbuttons">BidoofTV</button>
-          <button class="navigationbuttons">Minecraft Server</button>
-          <button class="navigationbuttons">Photos</button>
-          <button class="navigationbuttons">Other Art Stuff</button>
-        </div>
-
-        {% block Body %}{% endblock %}
       </div>
+      
+      <div class="center_buttons">
+        <img src="{{ url_for('static', filename='images/Blog Icon.png') }}" alt="Blog Icon" class="navicons"><a href="{{ url_for('blog')}}"><button class="navigationbuttons">Blog</button></a>
+        <img src="{{ url_for('static', filename='images/Music Icon.png') }}" alt="Music Icon" class="navicons"><button class="navigationbuttons">Music</button>
+        <img src="{{ url_for('static', filename='images/Coding Icon.png') }}" alt="Coding Icon" class="navicons"><button class="navigationbuttons">Coding</button>
+        <img src="{{ url_for('static', filename='images/BidoofTV Icon.png') }}" alt="BidoofTV Icon" class="navicons"><button class="navigationbuttons">BidoofTV</button>
+        <img src="{{ url_for('static', filename='images/MinecraftServer Icon.png') }}" alt="MinecraftServer Icon" class="navicons"><button class="navigationbuttons">Minecraft Server</button>
+        <img src="{{ url_for('static', filename='images/Photos Icon.png') }}" alt="Photos Icon" class="navicons"><button class="navigationbuttons">Photos</button>
+        <img src="{{ url_for('static', filename='images/Art Icon.png') }}" alt="Art Icon" class="navicons"><button class="navigationbuttons">Art</button>
+      </div>
+      <aside class="sidebar">
+        <p>
+        </p>
+      </aside>
+      <main>
+        {% block Body %}{% endblock %}
+      </main>
+
     </div>
   </body>
 </html>
