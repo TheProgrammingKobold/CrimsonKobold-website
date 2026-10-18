@@ -7,6 +7,7 @@
       Crimson Kobold
     </title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}" />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
   </head>
   <body>
     <div class="landscape" id="landscape"></div>
@@ -66,9 +67,24 @@
 
 
     <footer>
-        <h5>
-            Socials!
-        </h5>
+        <div class="socials">
+            <h5>
+                Socials: 
+            </h5>
+            <a href="https://bsky.app/profile/crimsonkobold.bsky.social">
+                <img src="{{url_for('static', filename='images/Bluesky_Logo.svg.webp')}}" alt="Bluesky logo">
+                <h5>
+                    Bluesky
+                </h5>
+            </a>
+
+            <a href="https://remwolf.bandcamp.com">
+                <img src="{{url_for('static', filename='images/RemWolfLogo.png')}}" alt="Rem Wolf Logo">
+                <h5>
+                    Rem Wolf Bandcamp Page
+                </h5>
+            </a>
+        </div>
     </footer>
     
   </body>

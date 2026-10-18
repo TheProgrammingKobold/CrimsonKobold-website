@@ -1,0 +1,17 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    expose:
+      - "8000"
+    networks:
+      - webnet
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    # volumes and other config...
