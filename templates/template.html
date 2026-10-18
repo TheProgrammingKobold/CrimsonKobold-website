@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Crimson Kobold
+    </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}" />
+  </head>
+  <body>
+    <div class="landscape" id="landscape"></div>
+    <div id="container">
+        <h1>
+            Crimson's Cool Website! 
+        </h1>
+    </div>
+    
+    <div class="center_buttons">
+        <a href="{{ url_for('home') }}" class="navigation-link">
+            <img src="{{ url_for('static', filename='images/Home Icon.png')}}" alt="Home Icon" class="navicons">
+            <span>Home</span>
+        </a>
+        <a href="{{ url_for('blog') }}" class="navigation-link">
+            <img src="{{ url_for('static', filename='images/Blog Icon.png')}}" alt="Home Icon" class="navicons">
+            <span>Blog</span>
+        </a>
+        <a href="{{ url_for('music') }}" class="navigation-link">
+            <img src="{{ url_for('static', filename='images/Music Icon.png')}}" alt="Home Icon" class="navicons">
+            <span>Music</span>
+        </a>
+        <a href="{{ url_for('coding') }}" class="navigation-link">
+            <img src="{{ url_for('static', filename='images/Coding Icon.png')}}" alt="Home Icon" class="navicons">
+            <span>Coding</span>
+        </a>
+        <a href="{{ url_for('bidoofTV') }}" class="navigation-link">
+            <img src="{{ url_for('static', filename='images/BidoofTV Icon.png')}}" alt="Home Icon" class="navicons">
+            <span>BidoofTV</span>
+        </a>
+        <a href="{{ url_for('minecraftserver') }}" class="navigation-link">
+            <img src="{{ url_for('static', filename='images/MinecraftServer Icon.png')}}" alt="Home Icon" class="navicons">
+            <span>Minecraft Server</span>
+        </a>
+        <a href="{{ url_for('photos') }}" class="navigation-link">
+            <img src="{{ url_for('static', filename='images/Photos Icon.png')}}" alt="Home Icon" class="navicons">
+            <span>Photos</span>
+        </a>
+        <a href="{{ url_for('art') }}" class="navigation-link">
+            <img src="{{ url_for('static', filename='images/Art Icon.png')}}" alt="Home Icon" class="navicons">
+            <span>Art</span>
+        </a>
+    </div>
+
+    <div class="page-content">
+        {% if has_sidebar %}
+        <aside class="sidebar">
+        {% block SideBar %}{% endblock %}
+        </aside>
+        {% endif %}
+        <main>
+            <div class="main-content">
+                {% block Body %}{% endblock %}
+            </div>
+        </main>
+    </div>
+
+    
+  </body>
+</html>
+

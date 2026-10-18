@@ -1,0 +1,36 @@
+{% extends 'template.html' %}
+
+{% block SideBar %}
+
+<section>
+  <h2>Latest Posts</h2>
+
+  {% for entry in latest_entries %}
+    <article>
+      <h3>
+        <a href="{{ entry.url }}">
+          {{ entry.title }}
+        </a>
+      </h3>
+
+      <p>{{ entry.category}} - {{ entry.date }}</p>
+    </article>
+  {% else %}
+    <p>No entries yet!</p>
+  {% endfor %}
+
+</section>
+
+{% endblock %}
+
+{% block Body %}
+
+  <h1>Welcome home!</h1>
+
+  <h5>
+      Hello! This is my website made by hand like god intended.
+      I'm a computer nerd who's always been facinated by the inner workings of computers! 
+      As well I've always been a music finatic! 
+  </h5>
+
+{% endblock %}

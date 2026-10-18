@@ -1,14 +1,34 @@
-{% extends 'hello.html' %}
+{% extends 'template.html' %}
+
+{% block SideBar %}
+<section>
+  <h2>Latest Blogs</h2>
+
+  {% for entry in latest_blogs %}
+    <article>
+      <h3>
+        <a href="{{ entry.url }}">
+          {{ entry.title }}
+        </a>
+      </h3>
+
+      <p>{{ entry.category}} - {{ entry.date }}</p>
+    </article>
+  {% else %}
+    <p>No blogs yet!</p>
+  {% endfor %}
+
+</section>
+{% endblock %}
 
 {% block Body %}
 
-<div class="blog">
-    <h1>Blog:</h1>
+  <h1>Blog:</h1>
 
-    <h5>
-        Hello Every Nyan! =D
-    </h5>
-</div>
+  <h5>
+      Hello Every Nyan! =D This is where you can findo out a little bit more about me and what I do and stuff! When i remember to post that is! Teehee! 
+  </h5>
+
 
 
 {% endblock %}
