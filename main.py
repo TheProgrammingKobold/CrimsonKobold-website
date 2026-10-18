@@ -95,7 +95,7 @@ def view_entry(category, slug):
     return render_template(
         "entry.html",
         title=slug.replace("-", " ").title(),
-        date=slug.replace("-", " ").date(),
+        date=file.stem[:10],
         content=content,
     )
 
@@ -114,27 +114,27 @@ def blog():
 
 @app.route("/Music")
 def music():
-    return render_template('music.html') # TODO: put the correct html file here
+    return render_template('music.html')
 
 @app.route("/Coding")
 def coding():
-    return render_template('coding.html') # TODO: put the correct html file here
+    return render_template('coding.html') 
 
 @app.route("/BidoofTV")
 def bidoofTV():
-    return render_template('bidooftv.html') # TODO: put the correct html file here
+    return render_template('bidooftv.html')
 
 @app.route("/MinecraftServer")
 def minecraftserver():
-    return render_template('minecraftserver.html') # TODO: put the correct html file here
+    return render_template('minecraftserver.html')
 
 @app.route("/Photos")
 def photos():
-    return render_template('photos.html') # TODO: put the correct html file here
+    return render_template('photos.html') 
 
 @app.route("/Art")
 def art():
-    return render_template('art.html') # TODO: put the correct html file here
+    return render_template('art.html') 
 
 
 if __name__ == '__main__':

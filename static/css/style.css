@@ -85,7 +85,9 @@ html {
   background-image: url(../images/background.png);
   background-size: 200px;
 
-  border: 1px solid white;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -105,7 +107,7 @@ html {
     gap: 20px;
 
     width: 100%;
-    max-width: 1600px;
+    max-width: 1730px;
     margin: 0 auto;
     padding: 20px;
     flex: 1;
@@ -145,4 +147,10 @@ main {
     line-height: 1.6;
     font-size: 18px;
     padding: 10px 20px;
+}
+
+footer {
+  display: flex;
+  background-color: rgb(26, 26, 26);
+  border-top: 1px solid white;
 }
