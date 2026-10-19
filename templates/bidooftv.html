@@ -27,7 +27,7 @@
 <script>
     const video = document.getElementById("bidoof-tv");
     const status = document.getElementById("tv-status");
-    const streamUrl = "/bidooftv/bidooftv/index.m3u8";
+    const streamUrl = "/bidooftv/index.m3u8";
 
     if (Hls.isSupported()) {
         const hls = new Hls();
@@ -39,8 +39,20 @@
         });
 
         hls.on(Hls.Events.ERROR, (event, data) => {
-            if (data.fatal) {
-                status.textContent = "Unable to load the stream.";
+            if (!data.fatal) return;
+
+            status.textContent = "Stream interrupted. Reconnecting...";
+
+            if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+                hls.startLoad();
+            } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+                hls.recoverMediaError();
+            } else {
+                hls.destroy();
+
+                setTimeout(() => {
+                    location.reload();
+                }, 3000);
             }
         });
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
