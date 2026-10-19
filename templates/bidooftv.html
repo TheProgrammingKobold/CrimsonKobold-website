@@ -2,6 +2,54 @@
 
 {% block Body %}
 
-  <h1>UNDER CONSTRUCTION</h1>
+  
+<div class="tv-player">
+    <video id="bidoof-tv" controls autoplay muted playsinline></video>
+    <p id="tv-status">Connecting to Bidoof TV...</p>
+</div>
+
+<style>
+    .tv-player {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .tv-player video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: black;
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+    const video = document.getElementById("bidoof-tv");
+    const status = document.getElementById("tv-status");
+    const streamUrl = "/bidooftv/bidooftv/index.m3u8";
+
+    if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(streamUrl);
+        hls.attachMedia(video);
+
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+            status.textContent = "Bidoof TV is ready!";
+        });
+
+        hls.on(Hls.Events.ERROR, (event, data) => {
+            if (data.fatal) {
+                status.textContent = "Unable to load the stream.";
+            }
+        });
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        video.src = streamUrl;
+        status.textContent = "Bidoof TV is ready!";
+    } else {
+        status.textContent = "Your browser does not support HLS playback.";
+    }
+</script>
+
 
 {% endblock %}

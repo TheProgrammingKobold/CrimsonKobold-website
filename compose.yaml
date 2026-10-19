@@ -25,6 +25,16 @@ services:
     networks:
       - webnet
 
+  mediamtx:
+    image: bluenviron/mediamtx:1
+    container_name: mediamtx
+    restart: unless-stopped
+    ports:
+      # Replace with your webserver's LAN IP.
+      - "10.1.1.11:1935:1935"
+    expose:
+      - "8888"
+
 networks:
   webnet:
 
