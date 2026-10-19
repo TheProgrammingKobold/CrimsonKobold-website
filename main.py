@@ -136,6 +136,13 @@ def photos():
 def art():
     return render_template('art.html') 
 
+@app.after_request
+def remove_sensitive_headers(response):
+    # Strip the Server and X-Powered-By headers if they exist
+    response.headers.pop('Server', None)
+    response.headers.pop('X-Powered-By', None)
+    return response
+
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)
