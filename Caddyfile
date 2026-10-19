@@ -1,7 +1,6 @@
 
 crimsonkobold.com {
     handle /bidooftv/* {
-        uri strip_prefix /bidooftv
         reverse_proxy mediamtx:8888
     }
 
