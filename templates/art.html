@@ -1,7 +1,18 @@
-{% extends 'template.html' %}
+ {% extends 'template.html' %}
 
 {% block Body %}
 
-  <h1>UNDER CONSTRUCTION</h1>
+<h1>All random art pieces I've made:</h1>
+
+<div class="art-gallery">
+    {% for image_name in image_names %}
+    <div class="photo-item">
+      <img
+          src="{{ url_for('static', filename='images/art/' ~ image_name) }}"
+          alt="{{ image_name }}"
+          loading="lazy">
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

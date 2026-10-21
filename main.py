@@ -1,3 +1,5 @@
+import os
+
 from flask import render_template, Flask, abort 
 from pathlib import Path
 import markdown
@@ -134,7 +136,18 @@ def photos():
 
 @app.route("/Art")
 def art():
-    return render_template('art.html') 
+    art_dir = Path(app.root_path) / "static" / "images" / "art"
+
+    image_names = [
+        filename
+        for filename in os.listdir(art_dir)
+        if (art_dir / filename).is_file()
+        and filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif"))
+    ]
+
+    image_names.sort()
+
+    return render_template('art.html', image_names=image_names) 
 
 @app.after_request
 def remove_sensitive_headers(response):
