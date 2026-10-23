@@ -132,7 +132,19 @@ def minecraftserver():
 
 @app.route("/Photos")
 def photos():
-    return render_template('photos.html') 
+    art_dir = Path(app.root_path) / "static" / "images" / "photos"
+
+    image_names = [
+        filename
+        for filename in os.listdir(art_dir)
+        if (art_dir / filename).is_file()
+        and filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif"))
+    ]
+
+    image_names.sort()
+
+    entries = get_entries_from_category(EntryCategory.photos)
+    return render_template('photos.html', image_names=image_names, latest_photos=entries, has_sidebar=True) 
 
 @app.route("/Art")
 def art():
