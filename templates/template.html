@@ -12,6 +12,7 @@
   <body>
     <div class="landscape" id="landscape"></div>
     <div id="container">
+        <img src="{{ url_for('static', filename='images/image4.png')}}" alt="">
         <h1>
             Crimson's Cool Website! 
         </h1>
@@ -49,6 +50,10 @@
         <a href="{{ url_for('art') }}" class="navigation-link">
             <img src="{{ url_for('static', filename='images/Art_Icon.png')}}" alt="Home Icon" class="navicons">
             <span>Art</span>
+        </a>
+        <a href="{{ url_for('games') }}" class="navigation-link">
+            <img src="{{ url_for('static', filename='images/Gaming_Icon.png')}}" alt="Home Icon" class="navicons">
+            <span>Games</span>
         </a>
     </div>
 

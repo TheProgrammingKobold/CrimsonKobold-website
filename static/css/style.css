@@ -103,6 +103,12 @@ html {
   padding-right: 30px;
 }
 
+#container img {
+    width: 150px;
+    height: 150px;
+    padding-top: 10px;
+}
+
 .main-content {
   max-width: 2000px;
   margin: 0 auto;

@@ -161,6 +161,10 @@ def art():
 
     return render_template('art.html', image_names=image_names) 
 
+@app.route("/Games")
+def games():
+    return render_template('games.html')
+
 @app.after_request
 def remove_sensitive_headers(response):
     # Strip the Server and X-Powered-By headers if they exist
